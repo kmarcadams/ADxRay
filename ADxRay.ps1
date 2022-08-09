@@ -1815,7 +1815,7 @@ foreach ($DC in $Global:DCs)
 
     $Domain = $DCD.Domain
     $DCHostName = $DC
-    $DCReadOnly = if($DC in $Global:RODCs){$true}else{$false}
+    $DCReadOnly = if($DC-in $Global:RODCs){$true}else{$false}
     $DCIP = $DCD.IPv4Address
     $SMBv1 = $DCD.InstalledFeatures | Where-Object {$_ -contains 'FS-SMB1'}
     $DCGC = $DCD.IsGlobalCatalog
